@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template.html"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Patients Patients</title>
+</head>
+<body>
+  <div layout:fragment="content">
+   <table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Branche</th>
+            <th>Niveau</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="Deplom : ${Deploms}">
+            <td th:text="${Deplom.name}"></td>
+            <td th:text="${Deplom.branche}"></td>
+            <td th:text="${Deplom.niveau}"></td>
+        </tr>
+    </tbody>
+</table>
+  </div>
+</body>
+</html>

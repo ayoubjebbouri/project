@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="template1.html">
+<head>
+    <title>Company Offers</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 th:text="${company.name}">Company Name</h1>
+        <h2>Offers List</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Grade Offer</th>
+                    <th>Date Position</th>
+                    <th>Date Finish</th>
+                    <th>Number of Posts</th>
+                    <th>Offer File</th>
+                    <th>Number</th>
+                    <th>Type of Diploma</th>
+                    <th>Diploma Label</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="offer : ${offers}">
+                    <td th:text="${Offer.IDOffer}"></td>
+                    <td th:text="${Offer.Title}"></td>
+                    <td th:text="${Offer.GradeOffer}"></td>
+                    <td th:text="${#dates.format(Offer.DatePos, 'yyyy-MM-dd')}"></td>
+                    <td th:text="${#dates.format(Offer.DateFin, 'yyyy-MM-dd')}"></td>
+                    <td th:text="${Offer.NumberPost}"></td>
+                    <td th:text="${Offer.FichierOffer}"></td>
+                    <td th:text="${Offer.NUM}"></td>
+                    <td th:text="${Offer.TypeDiploma}"></td>
+                    <td th:text="${Offer.LabelDiploma}"></td>
+                    <td th:text="${Offer.City}"></td>
+                    <td th:text="${Offer.Country}"></td>
+                    <td>
+                        <a th:href="@{/offers/{id}/edit(id=${Offer.IDOffer})}" class="btn btn-primary">Edit</a>
+                        <a th:href="@{/offers/{id}/delete(id=${Offer.IDOffer})}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/offers/add}" class="btn btn-success">Add Offer</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="template1.html">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Job SignupSociete</title>
+	<!-- Bootstrap CSS -->
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+				<div class="card mt-5">
+					<div class="card-body">
+						<h3 class="card-title text-center">Edit Societe</h3>
+						<form action="#" method="POST" th:object="${Societe}" th:action="@{/saveSociete}">
+                            <div class=" form-group">
+							<label for="NameSociete">Name Societe</label> <input type="text" class="form-control"
+								id="NameSociete" name="NameSociete" required placeholder="Enter first name"
+								th:value="${Societe.NomS}">
+					</div>
+					<div class="form-group">
+						<label for="DateCreation">Date de Creation</label> <input type="date" class="form-control"
+							id="DateCreation" name="DateCreation" required th:value="${Societe.DateCreation}">
+					</div>
+					<div class="form-group">
+						<label for="FormeJuridique">FormeJuridique</label> <input type="text" class="form-control"
+							id="FormeJuridique" name="FormeJuridique" required placeholder="FormeJuridique"
+							th:value="${Societe.FormeJuridique}">
+					</div>
+					<div class="form-group">
+						<label for="phone">Phone Number</label> <input type="tel" class="form-control" id="phone"
+							name="phone" placeholder="Enter your phone number" required th:value="${Societe.NUM}">
+					</div>
+					<div class="form-group">
+						<label for="Adresse">Adresse</label> <input type="text" class="form-control" id="Adresse"
+							name="Adresse" required aria-describedby="Adresse" placeholder="Enter Adresse"
+							th:value="${Societe.Adresse}">
+					</div>
+					<div class="form-group">
+						<label for="city">City</label> <input type="text" class="form-control" id="city" name="city"
+							required placeholder="Enter city" th:value="${Societe.City}">
+					</div>
+					<div class="form-group">
+						<label for="country">Country</label> <select class="form-control" id="country" name="country"
+							required th:value="${Societe.Country}">
+							<option value="">Select a country</option>
+							<!-- Dynamically populated options will be added here -->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="email">Email Address</label> <input type="email" class="form-control" id="email"
+							name="email" required aria-describedby="emailHelp" placeholder="Enter email"
+							th:value="${Societe.Email}">
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label> <input type="password" class="form-control" id="password"
+							name="password" required placeholder="Password" th:value="${Societe.Password}">
+					</div>
+					<div class="form-group">
+						<label for="password">Confirm Password</label> <input type="password" class="form-control"
+							id="Cpassword" name="password" required placeholder="Password">
+					</div>
+					<button type="submit" class="btn btn-primary btn-block">Sign
+						Up</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			var countries = ["Afghanistan", "Albania", "Algeria", "Andorra",
+				"Angola", "Antigua and Barbuda", "Argentina", "Armenia",
+				"Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain",
+				"Bangladesh", "Barbados", "Belarus", "Belgium", "Belize",
+				"Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina",
+				"Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
+				"Burundi", "Côte d'Ivoire", "Cabo Verde", "Cambodia",
+				"Cameroon", "Canada", "Central African Republic", "Chad",
+				"Chile", "China", "Colombia", "Comoros",
+				"Congo (Congo-Brazzaville)", "Costa Rica", "Croatia",
+				"Cuba", "Cyprus", "Czechia (Czech Republic)",
+				"Democratic Republic of the Congo", "Denmark", "Djibouti",
+				"Dominica", "Dominican Republic", "Ecuador", "Egypt",
+				"El Salvador", "Equatorial Guinea", "Eritrea", "Estonia",
+				"Eswatini (Swaziland)", "Ethiopia", "Fiji", "Finland",
+				"France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana",
+				"Greece", "Grenada", "Guatemala", "Guinea",
+				"Guinea-Bissau", "Guyana", "Haiti", "Holy See", "Honduras",
+				"Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq",
+				"Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan",
+				"Kazakhstan", "Kenya", "Kiribati", "Kuwait", "Kyrgyzstan",
+				"Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya",
+				"Liechtenstein", "Lithuania", "Luxembourg", "Madagascar",
+				"Malawi", "Malaysia", "Maldives", "Mali", "Malta",
+				"Marshall Islands", "Mauritania", "Mauritius", "Mexico",
+				"Micronesia", "Moldova", "Monaco", "Mongolia",
+				"Montenegro", "Morocco", "Mozambique",
+				"Myanmar (formerly Burma)", "Namibia", "Nauru", "Nepal",
+				"Netherlands", "New Zealand", "Nicaragua", "Niger",
+				"Nigeria", "North Korea",
+				"North Macedonia (formerly Macedonia)", "Norway", "Oman",
+				"Pakistan", "Palau", "Palestine State", "Panama",
+				"Papua New Guinea", "Paraguay", "Peru", "Philippines",
+				"Poland", "Portugal", "Qatar", "Romania", "Russia",
+				"Rwanda", "Saint Kitts and Nevis", "Saint Lucia",
+				"Saint Vincent and the Grenadines", "Samoa", "San Marino",
+				"Sao Tome and Principe", "Saudi Arabia", "Senegal",
+				"Serbia", "Seychelles", "Sierra Leone", "Singapore",
+				"Slovakia", "Slovenia", "Solomon Islands", "Somalia",
+				"South Africa", "South Korea", "South Sudan", "Spain",
+				"Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland",
+				"Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand",
+				"Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago",
+				"Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda",
+				"Ukraine", "United Arab Emirates", "United Kingdom",
+				"United States", "Uruguay", "Uzbekistan", "Vanuatu",
+				"Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"];
+			var select = document.getElementById('country');
+			countries.forEach(function (country) {
+				var option = document.createElement('option');
+				option.value = country;
+				option.textContent = country;
+				select.appendChild(option);
+			});
+		});
+	</script>
+</body>
+
+</html>

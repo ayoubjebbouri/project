@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{accessible/page1.html}">
+
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="" name="keywords">
+	<meta content="" name="description">
+	<title>Sign up Condidat</title>
+	<!-- Bootstrap CSS -->
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" href="../../static/css/fonts/font-awesome-4.7.0/css/font-awesome.min.css" th:href="@{/css/fonts/font-awesome-4.7.0/css/font-awesome.min.css}">
+
+	<!--===============================================================================================-->
+	<link href="../../static/css/anim1.css" th:href="@{/css/anim1.css}" rel="stylesheet"  >
+	<!--===============================================================================================-->
+	<link href="../../static/css/condidat1.css" th:href="@{/css/condidat1.css}" rel="stylesheet"  >
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" href="../../static/css/vendor/select2/select2.min.css" th:href="@{/css/vendor/select2/select2.min.css}">
+	<!--===============================================================================================-->
+	<link href="../../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet"  >
+	<link href="../../static/css/util.css" th:href="@{/css/util.css}" rel="stylesheet"  >
+	<!--===============================================================================================-->
+</head>
+<body>
+<div layout:fragment="content">
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-md-6">
+			<div class="card mt-5">
+				<div class="card-body">
+					<h3 class="card-title text-center">Sign Up</h3>
+					<form method="GET" th:object="${candidature}" th:action="@{/saveuser}">
+						<div class="form-group">
+							<label for="FirstName">First Name</label>
+							<input type="text" class="form-control" id="FirstName" name="FirstName" required placeholder="Enter first name" th:field="*{firstName}">
+						</div>
+						<div class="form-group">
+							<label for="LastName">Last Name</label>
+							<input type="text" class="form-control" id="LastName" name="LastName" required placeholder="Enter last name" th:field="*{lastName}">
+
+						</div>
+						<div class="form-group">
+							<label for="sexe">SEXE</label> <select class="form-control" id="sexe"
+																   name="sexe" required  th:field="*{sexe}">
+							<option value="">Select a sex</option>
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+							<option value="other">Other</option>
+						</select>
+						</div>
+						<div class="form-group">
+							<label for="dateN">Date of Birth</label> <input type="date"
+																			class="form-control" id="DateN" name="dateN" required th:field="*{dateN}"
+						>
+						</div>
+						<div class="form-group">
+							<label for="numCNI">CIN</label> <input type="text" class="form-control"
+																   id="numCNI" name="numCNI" required placeholder="Enter CIN" th:field="*{numCNI}"
+						>
+						</div>
+						<div class="form-group">
+							<label for="NUM">Phone Number</label> <input type="tel" class="form-control"
+																		 id="NUM" name="NUM" placeholder="Enter your phone number" required th:field="*{NUM}"
+						>
+						</div>
+						<div class="form-group">
+							<label for="niveau">Niveaux</label> <input type="text" class="form-control"
+																	   id="niveau" name="niveau" required aria-describedby="Niveaux" th:field="*{niveau}"
+																	   placeholder="Enter Niveaux" >
+						</div>
+						<div class="form-group">
+							<label for="City">City</label> <input type="text" class="form-control" id="City"
+																  name="City" required placeholder="Enter city" th:field="*{city}">
+						</div>
+						<div class="form-group">
+							<label for="Country">Country</label> <select class="form-control" id="Country"
+																		 name="Country" required th:field="*{country}">
+							<option value="">Select a country</option>
+
+							<!-- Dynamically populated options will be added here -->
+						</select>
+						</div>
+						<div class="form-group">
+							<label for="Email">Email Address</label> <input type="email" class="form-control"
+																			id="Email" name="Email" required aria-describedby="emailHelp"
+																			placeholder="Enter email" th:field="*{email}">
+						</div>
+						<div class="form-group">
+							<label for="Password">Password</label> <input type="password" class="form-control" th:field="*{password}"
+																		  id="Password" name="Password" required placeholder="Password"
+						>
+						</div>
+						<div class="form-group">
+							<label for="Password">Confirm Password</label> <input type="password"
+																				  class="form-control" id="Password1"  required
+																				  placeholder="Password">
+						</div>
+						<button type="submit" class="btn btn-primary btn-block">Sign
+							Up</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			var countries = ["Afghanistan", "Albania", "Algeria", "Andorra",
+				"Angola", "Antigua and Barbuda", "Argentina", "Armenia",
+				"Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain",
+				"Bangladesh", "Barbados", "Belarus", "Belgium", "Belize",
+				"Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina",
+				"Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso",
+				"Burundi", "Côte d'Ivoire", "Cabo Verde", "Cambodia",
+				"Cameroon", "Canada", "Central African Republic", "Chad",
+				"Chile", "China", "Colombia", "Comoros",
+				"Congo (Congo-Brazzaville)", "Costa Rica", "Croatia",
+				"Cuba", "Cyprus", "Czechia (Czech Republic)",
+				"Democratic Republic of the Congo", "Denmark", "Djibouti",
+				"Dominica", "Dominican Republic", "Ecuador", "Egypt",
+				"El Salvador", "Equatorial Guinea", "Eritrea", "Estonia",
+				"Eswatini (Swaziland)", "Ethiopia", "Fiji", "Finland",
+				"France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana",
+				"Greece", "Grenada", "Guatemala", "Guinea",
+				"Guinea-Bissau", "Guyana", "Haiti", "Holy See", "Honduras",
+				"Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq",
+				"Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan",
+				"Kazakhstan", "Kenya", "Kiribati", "Kuwait", "Kyrgyzstan",
+				"Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya",
+				"Liechtenstein", "Lithuania", "Luxembourg", "Madagascar",
+				"Malawi", "Malaysia", "Maldives", "Mali", "Malta",
+				"Marshall Islands", "Mauritania", "Mauritius", "Mexico",
+				"Micronesia", "Moldova", "Monaco", "Mongolia",
+				"Montenegro", "Morocco", "Mozambique",
+				"Myanmar (formerly Burma)", "Namibia", "Nauru", "Nepal",
+				"Netherlands", "New Zealand", "Nicaragua", "Niger",
+				"Nigeria", "North Korea",
+				"North Macedonia (formerly Macedonia)", "Norway", "Oman",
+				"Pakistan", "Palau", "Palestine State", "Panama",
+				"Papua New Guinea", "Paraguay", "Peru", "Philippines",
+				"Poland", "Portugal", "Qatar", "Romania", "Russia",
+				"Rwanda", "Saint Kitts and Nevis", "Saint Lucia",
+				"Saint Vincent and the Grenadines", "Samoa", "San Marino",
+				"Sao Tome and Principe", "Saudi Arabia", "Senegal",
+				"Serbia", "Seychelles", "Sierra Leone", "Singapore",
+				"Slovakia", "Slovenia", "Solomon Islands", "Somalia",
+				"South Africa", "South Korea", "South Sudan", "Spain",
+				"Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland",
+				"Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand",
+				"Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago",
+				"Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda",
+				"Ukraine", "United Arab Emirates", "United Kingdom",
+				"United States", "Uruguay", "Uzbekistan", "Vanuatu",
+				"Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"];
+			var select = document.getElementById('Country');
+			countries.forEach(function (country) {
+				var option = document.createElement('option');
+				option.value = country;
+				option.textContent = country;
+				select.appendChild(option);
+			});
+		});
+	</script>
+</div>
+</body>
+
+</html>

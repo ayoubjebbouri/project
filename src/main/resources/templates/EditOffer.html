@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Offer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1>Edit Offer</h1>
+        <form th:action="@{/offers/{id}/update(id=${offer.IDOffer})}" th:object="${offer}" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" th:field="*{Offer.Title}" required>
+            </div>
+            <div class="form-group">
+                <label for="gradeOffer">Grade Offer</label>
+                <input type="text" class="form-control" id="gradeOffer" th:field="*{Offer.GradeOffer}" required>
+            </div>
+            <div class="form-group">
+                <label for="datePos">Date Position</label>
+                <input type="date" class="form-control" id="datePos" th:field="${Offer.DatePos}" required>
+            </div>
+            <div class="form-group">
+                <label for="dateFin">Date Finish</label>
+                <input type="date" class="form-control" id="dateFin" th:field="${Offer.DateFin}" required>
+            </div>
+            <div class="form-group">
+                <label for="numberPost">Number of Posts</label>
+                <input type="number" class="form-control" id="numberPost" th:field="${Offer.NumberPost}" required>
+            </div>
+            <div class="form-group">
+                <label for="num">Number</label>
+                <input type="number" class="form-control" id="num" th:field="${Offer.NUM}" required>
+            </div>
+            <div class="form-group">
+                <label for="typeDiploma">Type of Diploma</label>
+                <input type="text" class="form-control" id="typeDiploma" th:field="${Offer.TypeDiploma}" required>
+            </div>
+            <div class="form-group">
+                <label for="labelDiploma">Diploma Label</label>
+                <input type="text" class="form-control" id="labelDiploma" th:field="${Offer.LabelDiploma}" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city" th:field="${Offer.City}" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Country</label>
+                <input type="text" class="form-control" id="country" th:field="${Offer.Country}" required>
+            </div>
+            <div class="form-group">
+                <label for="idSociete">Company ID</label>
+                <input type="number" class="form-control" id="idSociete" th:field="${Offer.IDSociete}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a th:href="@{/offers/{id}/delete(id=${offer.IDOffer})}" class="btn btn-danger">Delete</a>
+        </form>
+    </div>
+</body>
+</html>

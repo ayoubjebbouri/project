@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="templates.html">
+<head>
+<meta charset="UTF-8">
+<title>ADD DEPLOM</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="p-3">
+			<form th:action="@{/savedeplom}" th:object="${Deplom}" method="post">
+				<div>
+					<label for="name">Name:</label> <input type="text" id="name"
+						th:field="*{Deplom.name}" required>
+				</div>
+				<div>
+					<label for="branche">Branche:</label> <input type="text"
+						id="branche" th:field="*{Deplom.branche}" required>
+				</div>
+				<div>
+					<label for="niveau">Niveau:</label> <input type="text" id="niveau"
+						th:field="*{Deplom.niveau}" required>
+				</div>
+				<button type="submit">Save</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

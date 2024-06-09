@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Diploma-Candidate</title>
+</head>
+<body>
+    <h1>Add Diploma-Candidate</h1>
+    <form th:action="@{/deplomcondidat/save}" th:object="${deplomcondidat}" method="post" enctype="multipart/form-data">
+      <div>
+            <label for="diploma">Diploma:</label>
+            <select id="diploma" th:field="*{IDDeplom}">
+                <option value="">Select a diploma</option>
+                <option th:each="deplom : ${Diplomas}" th:value="${Deplom.id}" th:text="${Deplom.Name}"></option>
+            </select>
+        </div>
+        <div>
+            <label for="condidat">Branche</label>
+            <select id="condidat" th:field="*{NamDiplomas}">
+                <option value="">Select a candidate</option>
+                <option th:each="Diplomas : ${Diplomas}" th:value="${Deplom.Name}" th:text="${Deplom.Branche}"></option>
+            </select>
+        </div>
+        <div>
+            <label for="diploma-file">Diploma File:</label>
+            <input type="file" id="diploma-file" name="diploaFile" required th:value="${Deplomcondidat.Diploma}">
+        </div>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
