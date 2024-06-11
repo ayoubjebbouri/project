@@ -1,16 +1,24 @@
 package com.exemple.web;
 import com.exemple.dao.CandidatureRepository;
+import com.exemple.dao.DeplomRepository;
 import com.exemple.dao.SocieteRepository;
 import com.exemple.entities.Candidature;
+import com.exemple.entities.Deplom;
 import com.exemple.entities.Societe;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class Controller1 {
+    @Autowired
+    private DeplomRepository deplomService;
     @Autowired
     private SocieteRepository societeRepository;
     @Autowired
@@ -43,7 +51,7 @@ public class Controller1 {
     @GetMapping("/loginadmin")
     public String loginadmin(){
 
-        return "accessible/loginadmin";
+        return "Admin/Offeradmin";
     }
     @GetMapping("/logincondida")
     public String logincondida(){
@@ -83,6 +91,25 @@ public class Controller1 {
     public String loginsociete(){
 
         return "accessible/logsociete";
+    }
+
+    @GetMapping("/listedeploms")
+    public String getdeplom(){
+        return "Admin/societe";
+    }
+    @GetMapping("/deploma")
+    public String liste(Model model,
+                        @RequestParam(name = "page", defaultValue = "0") int page,
+                        @RequestParam(name = "size", defaultValue = "5") int size,
+                        @RequestParam(name = "keyword", defaultValue = "") String kw) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<Deplom> deplomPage = deplomService.findByniveauContains(kw, pageable);
+
+        model.addAttribute("listDeplom", deplomPage.getContent());
+        model.addAttribute("pages", new int[deplomPage.getTotalPages()]);
+        model.addAttribute("currentPage", page);
+
+        return "Admin/Deplom";
     }
 }
 /*

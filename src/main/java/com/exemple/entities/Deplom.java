@@ -15,7 +15,7 @@ public class Deplom {
 	@NotEmpty 
 	private String Branche;
 	@NotEmpty  @Size(min = 2, max = 15)
-	private String Niveau;
+	private String niveau;
 	public Deplom() {
 		super();
 		
@@ -25,7 +25,7 @@ public class Deplom {
 		this.id = id;
 		Name = name;
 		Branche = branche;
-		Niveau = niveau;
+		niveau = niveau;
 	}
 	public long getId() {
 		return id;
@@ -45,11 +45,11 @@ public class Deplom {
 	public void setBranche(String branche) {
 		Branche = branche;
 	}
-	public String getNiveau() {
-		return Niveau;
+	public String getniveau() {
+		return niveau;
 	}
-	public void setNiveau(String niveau) {
-		Niveau = niveau;
+	public void setniveau(String niveau) {
+		niveau = niveau;
 	}
 	
 	

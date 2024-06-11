@@ -32,8 +32,12 @@ public class SecurityConfig {
     public SecurityFilterChain SecurityFilterChain(HttpSecurity httpSecurity) throws Exception{
         httpSecurity.formLogin().loginPage("/index").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/webjars/**").permitAll();
+        httpSecurity.authorizeHttpRequests().requestMatchers("/liste").permitAll();
+        httpSecurity.authorizeHttpRequests().requestMatchers("/deploma").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/css/**").permitAll();
+        httpSecurity.authorizeHttpRequests().requestMatchers("/listedeploms").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/format").permitAll();
+        httpSecurity.authorizeHttpRequests().requestMatchers("/Admin/**").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/saveuser").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/loginsociete").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/savesociete").permitAll();
