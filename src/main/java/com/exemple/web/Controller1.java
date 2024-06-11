@@ -12,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -111,6 +112,30 @@ public class Controller1 {
 
         return "Admin/Deplom";
     }
+    @GetMapping("/dmin/deletedeplom")
+    public String deletedeplom(@RequestParam(name = "id") Long id, String keyword , int page){
+        deplomService.deleteById(id);
+        return "Admin/Deplom";
+    }
+    @GetMapping("/admin/adddeplom")
+    public String adddeplom(Deplom deplom ){
+        deplomService.save(deplom);
+        return "Admin/Deplom";
+    }
+    @GetMapping("/admin/editdeplom")
+    public String editdeplom(@RequestParam(name = "id" ) Long id ,Model model){
+        Deplom deplom=deplomService.findById(id).get();
+        model.addAttribute("deplom", deplom);
+        return "Admin/Deplom";
+
+    }
+    @PostMapping("/admin/editdeplom")
+    public String editdeplom1(@ModelAttribute Deplom deplom){
+        deplomService.save(deplom);
+        return "redirect:/Admin/Deplom";
+
+    }
+
 }
 /*
         if (Objects.equals(id, "2")) {
