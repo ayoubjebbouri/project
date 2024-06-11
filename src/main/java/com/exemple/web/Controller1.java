@@ -24,6 +24,7 @@ public class Controller1 {
     public String getsdmin() {
         return "/accessible/page1";
     }
+
     @GetMapping("/accessible/about1")
     public String getabout(){
 
