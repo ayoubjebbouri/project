@@ -36,7 +36,6 @@
         <div class="bg-secondary text-center rounded p-3">
             <div class="d-flex align-items-center justify-content-between mb-4">
                 <h6 class="mb-0">Societe </h6>
-                <a href="">Show All</a>
             </div>
             <div class="table-responsive">
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
@@ -55,72 +54,24 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
+                    <tr th:each="o:${listsociete}">
 
-                        <td>01 Jan 2045</td>
-                        <td>INV-0123</td>
-                        <td>Jhon Doe</td>
-                        <td>$123</td>
-                        <td>01 Jan 2045</td>
-                        <td>INV-0123</td>
-                        <td>Jhon Doe</td>
-                        <td>$123</td>
-                        <td>$123</td>
+                        <td th:text="${o.IDSociete}"></td>
+                        <td th:text="${o.nomS}"></td>
+                        <td th:text="${o.dateCreation}"></td>
+                        <td th:text="${o.formeJuridique}"></td>
+                        <td th:text="${o.NUM}"></td>
+                        <td th:text="${o.email}"></td>
+                        <td th:text="${o.adresse}"></td>
+                        <td th:text="${o.city}"></td>
+                        <td th:text="${o.country}"></td>
                         <td>
-                            <a class="btn btn-sm btn-primary" href="">Delete</a>
+                            <a onclick="return confirm('Etes vous sûre?')" class="btn btn-danger"
+                               >
+                                <i class="bi bi-trash"></i>
+                            </a>
                         </td>
-                    </tr>
-                    <tr>
-
-                        <td>01 Jan 2045</td>
-                        <td>INV-0123</td>
-                        <td>Jhon Doe</td>
-                        <td>$123</td>
-                        <td>01 Jan 2045</td>
-                        <td>INV-0123</td>
-                        <td>Jhon Doe</td>
-                        <td>$123</td>
-                        <td>$123</td>
-                        <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                    </tr>
-                    <tr>
-
-                        <td>01 Jan 2045</td>
-                        <td>INV-0123</td>
-                        <td>Jhon Doe</td>
-                        <td>$123</td>
-                        <td>01 Jan 2045</td>
-                        <td>INV-0123</td>
-                        <td>Jhon Doe</td>
-                        <td>$123</td>
-                        <td>$123</td>
-                        <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                    </tr>
-                    <tr>
-
-                        <td>01 Jan 2045</td>
-                        <td>INV-0123</td>
-                        <td>Jhon Doe</td>
-                        <td>$123</td>
-                        <td>01 Jan 2045</td>
-                        <td>INV-0123</td>
-                        <td>Jhon Doe</td>
-                        <td>$123</td>
-                        <td>$123</td>
-                        <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                    </tr>
-                    <tr>
-
-                        <td>01 Jan 2045</td>
-                        <td>INV-0123</td>
-                        <td>Jhon Doe</td>
-                        <td>$123</td>
-                        <td>01 Jan 2045</td>
-                        <td>INV-0123</td>
-                        <td>Jhon Doe</td>
-                        <td>$123</td>
-                        <td>$123</td>
-                        <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
+                        </td>
                     </tr>
                     </tbody>
                 </table>

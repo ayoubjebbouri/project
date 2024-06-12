@@ -42,7 +42,7 @@ public class Offer {
                  int iDSociete) {
         super();
         IDOffer = iDOffer;
-        Title = title;
+        this.Title = title;
         GradeOffer = gradeOffer;
         DatePos = datePos;
         DateFin = dateFin;
@@ -70,12 +70,12 @@ public class Offer {
 
 
     public String getTitle() {
-        return Title;
+        return this.Title;
     }
 
 
     public void setTitle(String title) {
-        Title = title;
+        this.Title = title;
     }
 
 

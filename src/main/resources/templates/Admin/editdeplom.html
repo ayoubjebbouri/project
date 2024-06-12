@@ -33,37 +33,43 @@
 
 <div layout:fragment="content">
 
-        <div class="row h-50 align-items-center justify-content-center" style="min-height: 50vh;">
-            <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
-                <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                        <a href="#" class="">
-                            <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>JoB</h3>
-                        </a>
-                        <h3>Deplom</h3>
-                    </div>
-                    <form method="GET" th:object="${deplom}" th:action="@{/admin/addeplom}" >
+    <div class="row h-50 align-items-center justify-content-center" style="min-height: 50vh;">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+            <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <a href="#" class="">
+                        <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>JoB</h3>
+                    </a>
+                    <h3>Deplom</h3>
+                </div>
+                <form method="GET" th:object="${deplom}" th:action="@{/admin/adddeplom}" >
+                    <label for="name" class="form-label">ID:</label>
+                    <label th:text="${deplom.id}"></label>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="name" placeholder="Name" required  name="name" th:field="*{name}">
+                        <input type="text" class="form-control" id="id" placeholder="Name" required  name="id" th:value="${deplom.id}">
+                        <label for="id">Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="name" placeholder="Name" required  name="name" th:value="${deplom.name}">
                         <label for="name">Name</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="branche" placeholder="branche" required  name="branche" th:field="*{branche}">
+                        <input type="text" class="form-control" id="branche" placeholder="branche" required  name="branche" th:value="${deplom.branche}">
                         <label for="branche">Branche</label>
                     </div>
                     <div class="form-floating mb-4">
-                        <input type="text" class="form-control" id="niveau" placeholder="niveau" required  name="niveau" th:field="*{niveau}">
+                        <input type="text" class="form-control" id="niveau" placeholder="niveau" required  name="niveau" th:value="${deplom.getniveau()}">
                         <label for="niveau">Niveau</label>
                     </div>
 
-                    <button type="submit" class="btn btn-primary py-3 w-100 mb-4">ADD</button>
-                    </form>
+                    <button type="submit" class="btn btn-primary py-3 w-100 mb-4">EDIT</button>
+                </form>
 
-                                <a class="btn btn-primary py-3 w-100 mb-4" th:href="@{/deploma}">LISTE DES DEPLOMS</a>
-                </div>
+                <a class="btn btn-primary py-3 w-100 mb-4" th:href="@{/deploma}">LISTE DES DEPLOMS</a>
             </div>
-
         </div>
+
+    </div>
 
 </div>
 

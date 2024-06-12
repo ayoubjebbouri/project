@@ -23,12 +23,12 @@ public class SociatyController {
 	        this.offerRepository = offerRepository;
 	    }
 
-	    @GetMapping("/companies/{id}/offers")
+	/*    @GetMapping("/companies/{id}/offers")
 	    public String showCompanyOffers(@PathVariable("id") Long companyId, Model model) {
 	        Societe societe = societeRepository.findById(companyId).orElse(null);
 	        Page<Offer> offers = offerRepository.findByIDSocieteContains(companyId , PageRequest.of(0,5));
 	        model.addAttribute("Societe", societe);
 	        model.addAttribute("Offer", offers);
 	        return "company-offers";
-	    }
+	    }*/
 }

@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.exemple.entities.Offer;
 public interface OfferRepository extends JpaRepository<Offer, Long> {
-	Page<Offer> findByTitleContains(String kw, Pageable pageable);
-    Page<Offer> findByIDSocieteContains(Long kw, Pageable pageable);
+	Page<Offer> findByLabelDiplomaContains(String kw, Pageable pageable);
+
 
 }

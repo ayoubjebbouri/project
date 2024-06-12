@@ -10,32 +10,27 @@ import jakarta.validation.constraints.Size;
 public class Deplom {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	@NotEmpty 
-	private String Name;
-	@NotEmpty 
-	private String Branche;
-	private String niveau;
 	@NotEmpty
-	private String Grad;
+	private String Name;
+	@NotEmpty
+	private String Branche;
+	@NotEmpty
+	private String niveau;
+
 	public Deplom() {
 		super();
-		
+
 	}
-	public Deplom(long id, String name, String branche, String niveau , String Grad) {
+	public Deplom(long id, String name, String branche, String niveau ) {
 		super();
 		this.id = id;
 		Name = name;
 		Branche = branche;
-		niveau = niveau;
-		Grad = Grad;
+		this.niveau = niveau;
+
 	}
 
-	public String getGrad() {
-		return Grad;
-	}
-	public void setGrad(String grad) {
-		Grad = grad;
-	}
+
 
 	public long getId() {
 		return id;
@@ -59,8 +54,7 @@ public class Deplom {
 		return niveau;
 	}
 	public void setniveau(String niveau) {
-		niveau = niveau;
+		this.niveau = niveau;
 	}
-	
 	
 }

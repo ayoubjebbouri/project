@@ -34,12 +34,15 @@ public class SecurityConfig {
         httpSecurity.authorizeHttpRequests().requestMatchers("/webjars/**").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/liste").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/deploma").permitAll();
+        httpSecurity.authorizeHttpRequests().requestMatchers("/dmin/deletedeplom").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/admin/addeplom").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/admin/addeplom").permitAll();
+        httpSecurity.authorizeHttpRequests().requestMatchers("/offers").permitAll();
+        httpSecurity.authorizeHttpRequests().requestMatchers("/societe").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/pageaddeploms").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/admin/adddeplom").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/pageaddeplom").permitAll();
-        httpSecurity.authorizeHttpRequests().requestMatchers("/admin/editdeplom").permitAll();
+        httpSecurity.authorizeHttpRequests().requestMatchers("/admin/editdeplom1").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/css/**").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/listedeploms").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/format").permitAll();

@@ -34,7 +34,7 @@ public class Societe {
 	                   String password, String adresse, String description, String city, String country) {
 	        super();
 	        IDSociete = iDSociete;
-	        NomS = nomS;
+	        this.NomS = nomS;
 	        DateCreation = dateCreation;
 	        FormeJuridique = formeJuridique;
 	        NUM = nUM;
@@ -63,7 +63,7 @@ public class Societe {
 	    }
 
 	    public void setNomS(String nomS) {
-	        NomS = nomS;
+	        this.NomS = nomS;
 	    }
 
 	    public LocalDate getDateCreation() {
