@@ -36,7 +36,7 @@
         <div class="bg-secondary text-center rounded p-3">
             <div class="d-flex align-items-center justify-content-between mb-4">
                 <h6 class="mb-0">Deplom</h6>
-                <a th:href="@{/pageaddeplom}">ADD DEPLOM</a>
+                <a th:href="@{/pageaddeploms}">ADD DEPLOM</a>
             </div>
             <div class="table-responsive">
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
@@ -55,7 +55,7 @@
                         <td th:text="${p.id}"></td>
                         <td th:text="${p.name}"></td>
                         <td th:text="${p.branche}"></td>
-                        <td th:text="${p.getniveau()}"></td>
+                        <td th:text="${p.grad}"></td>
                         <td>
                             <a onclick="return confirm('Etes vous sûre?')" class="btn btn-danger"
                                th:href="@{/dmin/deletedeplom(id=${p.id}, keyword=${keyword}, page=${currentPage})}">
@@ -70,7 +70,15 @@
 
                     </tbody>
                 </table>
-
+                <ul class="nav nav-pills">
+                    <li th:each="page,status:${pages}">
+                        <a
+                                th:class="${status.index==currentPage?'btn btn-info ms-1':'btn btn-outline-info ms-1'}"
+                                th:href="@{index(page=${status.index}, keyword=${keyword})}"
+                                th:text="${status.index}">
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

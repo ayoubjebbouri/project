@@ -32,7 +32,7 @@
 
 
 <div layout:fragment="content">
-    <form method="GET" th:object="${deplom}" th:action="@{/admin/adddeplom}" >
+
         <div class="row h-50 align-items-center justify-content-center" style="min-height: 50vh;">
             <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
                 <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
@@ -42,6 +42,7 @@
                         </a>
                         <h3>Deplom</h3>
                     </div>
+                    <form method="GET" th:object="${deplom}" th:action="@{/admin/addeplom}" >
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="name" placeholder="Name" required  name="name" th:field="*{name}">
                         <label for="name">Name</label>
@@ -51,16 +52,19 @@
                         <label for="branche">Branche</label>
                     </div>
                     <div class="form-floating mb-4">
-                        <input type="text" class="form-control" id="niveau" placeholder="niveau" required  name="niveau" th:field="*{getniveau()}">
+                        <input type="text" class="form-control" id="niveau" placeholder="niveau" required  name="niveau" th:field="*{grad}">
                         <label for="niveau">Niveau</label>
                     </div>
 
                     <button type="submit" class="btn btn-primary py-3 w-100 mb-4">ADD</button>
+                    </form>
 
+                                <a class="btn btn-primary py-3 w-100 mb-4" th:href="@{/deploma}">LISTE DES DEPLOMS</a>
                 </div>
             </div>
+
         </div>
-    </form>
+
 </div>
 
 

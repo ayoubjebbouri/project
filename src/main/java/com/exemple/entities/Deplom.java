@@ -14,19 +14,29 @@ public class Deplom {
 	private String Name;
 	@NotEmpty 
 	private String Branche;
-	@NotEmpty  @Size(min = 2, max = 15)
 	private String niveau;
+	@NotEmpty
+	private String Grad;
 	public Deplom() {
 		super();
 		
 	}
-	public Deplom(long id, String name, String branche, String niveau) {
+	public Deplom(long id, String name, String branche, String niveau , String Grad) {
 		super();
 		this.id = id;
 		Name = name;
 		Branche = branche;
 		niveau = niveau;
+		Grad = Grad;
 	}
+
+	public String getGrad() {
+		return Grad;
+	}
+	public void setGrad(String grad) {
+		Grad = grad;
+	}
+
 	public long getId() {
 		return id;
 	}

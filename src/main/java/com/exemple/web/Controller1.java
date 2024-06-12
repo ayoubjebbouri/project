@@ -109,7 +109,7 @@ public class Controller1 {
         model.addAttribute("listDeplom", deplomPage.getContent());
         model.addAttribute("pages", new int[deplomPage.getTotalPages()]);
         model.addAttribute("currentPage", page);
-
+        model.addAttribute("keyword", kw);
         return "Admin/Deplom";
     }
     @GetMapping("/dmin/deletedeplom")
@@ -133,6 +133,16 @@ public class Controller1 {
     public String pageaddeplom(Model model){
         model.addAttribute("deplom", new Deplom());
         return "Admin/test";
+    }
+    @GetMapping("/pageaddeploms")
+    public String pageaddeploms(Model model){
+        model.addAttribute("deplom", new Deplom());
+        return "Admin/Addeplom";
+    }
+    @GetMapping("/admin/addeplom")
+    public String addeplom(Deplom deplom){
+        deplomService.save(deplom);
+        return "Admin/Addeplom";
     }
    /* @GetMapping("/admin/addeplom")
     public String editdeplom(@RequestParam String name ,@RequestParam String branche,@RequestParam String niveau){
