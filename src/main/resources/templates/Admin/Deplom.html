@@ -36,7 +36,7 @@
         <div class="bg-secondary text-center rounded p-3">
             <div class="d-flex align-items-center justify-content-between mb-4">
                 <h6 class="mb-0">Deplom</h6>
-                <a href="">Show All</a>
+                <a th:href="@{/pageaddeplom}">ADD DEPLOM</a>
             </div>
             <div class="table-responsive">
                 <table class="table text-start align-middle table-bordered table-hover mb-0">
@@ -70,38 +70,11 @@
 
                     </tbody>
                 </table>
-            </div>
-        </div>
-    </div>
-<from method="post" th:action="@{/admin/editdeplom}" id="myform">
-    <div class="row h-50 align-items-center justify-content-center" style="min-height: 50vh;">
-        <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
-            <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
-                <div class="d-flex align-items-center justify-content-between mb-3">
-                    <a href="#" class="">
-                        <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>JoB</h3>
-                    </a>
-                    <h3>Deplom</h3>
-                </div>
-                <div class="form-floating mb-3">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Name">
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="branch" placeholder="Branch">
-                    <label for="branch">Branche</label>
-                </div>
-                <div class="form-floating mb-4">
-                    <input type="text" class="form-control" id="niveau" placeholder="Niveau" >
-                    <label for="niveau">Niveau</label>
-                </div>
-
-                <button type="submit" class="btn btn-primary py-3 w-100 mb-4">ADD</button>
 
             </div>
         </div>
     </div>
-</from>
+
 </div>
 
 

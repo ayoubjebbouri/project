@@ -118,23 +118,41 @@ public class Controller1 {
         return "Admin/Deplom";
     }
     @GetMapping("/admin/adddeplom")
-    public String adddeplom(Deplom deplom ){
+    public String adddeplom(Deplom deplom){
         deplomService.save(deplom);
         return "Admin/Deplom";
     }
-    @GetMapping("/admin/editdeplom")
-    public String editdeplom(@RequestParam(name = "id" ) Long id ,Model model){
-        Deplom deplom=deplomService.findById(id).get();
+    @GetMapping("/admin/editdeplom1")
+    public String edisqtdeplom(@RequestParam(name = "id" ) Long id ,Model model){
+        Deplom deplom =deplomService.findById(id).get();
         model.addAttribute("deplom", deplom);
         return "Admin/Deplom";
 
     }
+    @GetMapping("/pageaddeplom")
+    public String pageaddeplom(Model model){
+        model.addAttribute("deplom", new Deplom());
+        return "Admin/test";
+    }
+   /* @GetMapping("/admin/addeplom")
+    public String editdeplom(@RequestParam String name ,@RequestParam String branche,@RequestParam String niveau){
+        Deplom deplom = new Deplom();
+        deplom.setName(name);
+        deplom.setBranche(branche);
+        deplom.setniveau(niveau);
+        deplomService.save(deplom);
+        return "redirect:/Admin/Deplom";
+    }
     @PostMapping("/admin/editdeplom")
-    public String editdeplom1(@ModelAttribute Deplom deplom){
+    public String editdeplom1(@RequestParam("name") String name ,@RequestParam("branche") String branche,@RequestParam("niveau") String niveau){
+        Deplom deplom = new Deplom();
+        deplom.setName(name);
+        deplom.setBranche(branche);
+        deplom.setniveau(niveau);
         deplomService.save(deplom);
         return "redirect:/Admin/Deplom";
 
-    }
+    }*/
 
 }
 /*
