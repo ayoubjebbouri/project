@@ -1,9 +1,6 @@
 package com.exemple.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
@@ -14,6 +11,7 @@ public class Admin {
 	@NotEmpty @Size(min = 4, max = 20)
 	private String UserName ;
 	@NotEmpty @Size(min = 4, max = 100)
+	@Column(unique = true)
 	private String Email;
 	@NotEmpty @Size(min = 8, max = 15)
 	private String Password;
