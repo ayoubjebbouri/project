@@ -216,13 +216,13 @@ public class Controller1 {
                         @RequestParam(name = "size", defaultValue = "5") int size,
                         @RequestParam(name = "keyword", defaultValue = "") String kw) {
         Pageable pageable = PageRequest.of(page, size);
-        Page<Candidature> candidatures = candidatureRepository.findByFirstNameContains(kw, pageable);
+        Page<Candidature> candidatures = candidatureRepository.findByPropertyNameContains(kw, pageable);
 
         model.addAttribute("conliste", candidatures.getContent());
         model.addAttribute("pages", new int[candidatures.getTotalPages()]);
         model.addAttribute("currentPage", page);
         model.addAttribute("keyword", kw);
-        return "Admin/Deplom";
+        return "Admin/listecondida";
     }
 
    /* @GetMapping("/admin/addeplom")

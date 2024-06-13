@@ -26,12 +26,19 @@ public class Candidature {
 	    String NUM;
 	    @NotEmpty 
 	    String Email;
+		private String PropertyName;
 	    @NotEmpty @Size(min = 8, max = 15)
 	    String Password;
 	    @NotEmpty
 	    String niveau;
 	    String City;
 	    String Country;
+	    public void setPropertyName(String PropertyName) {
+			this.PropertyName = PropertyName;
+	}
+ 	    public String getPropertyName() {
+		return this.PropertyName;
+	}
 		public Long getIDC() {
 			return IDC;
 		}
@@ -107,7 +114,7 @@ public class Candidature {
 		public Candidature(Long iDC, @NotEmpty String lastName, @NotEmpty String firstName, @NotEmpty String sexe,
 				@NotEmpty LocalDate dateN, @NotEmpty @Size(min = 8, max = 12) String numCNI, @NotEmpty String nUM,
 				@NotEmpty String email, @NotEmpty @Size(min = 8, max = 15) String password, @NotEmpty String niveau,
-				 String city, String country) {
+				 String city, String country,String PropertyName) {
 			super();
 			IDC = iDC;
 			LastName = lastName;
@@ -121,6 +128,7 @@ public class Candidature {
 			this.niveau = niveau;
 			City = city;
 			Country = country;
+			this.PropertyName = PropertyName;
 		}
 		public Candidature() {
 			super();

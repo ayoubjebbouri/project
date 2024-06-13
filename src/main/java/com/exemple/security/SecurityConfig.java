@@ -37,6 +37,7 @@ public class SecurityConfig {
         httpSecurity.authorizeHttpRequests().requestMatchers("/logadmin").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/dmin/deletedeplom").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/admin/addeplom").permitAll();
+        httpSecurity.authorizeHttpRequests().requestMatchers("/condida").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/admin/addeplom").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/offers").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/societe").permitAll();

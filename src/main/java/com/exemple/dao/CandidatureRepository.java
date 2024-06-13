@@ -10,5 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CandidatureRepository extends JpaRepository<Candidature, Long> {
 	Page<Candidature> findByFirstNameContains(String kw, Pageable pageable);
+	public Page<Candidature> findByPropertyNameContains(String kw, Pageable pageable);
 
 }
