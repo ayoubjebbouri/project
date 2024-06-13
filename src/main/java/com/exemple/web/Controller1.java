@@ -1,12 +1,6 @@
 package com.exemple.web;
-import com.exemple.dao.CandidatureRepository;
-import com.exemple.dao.DeplomRepository;
-import com.exemple.dao.OfferRepository;
-import com.exemple.dao.SocieteRepository;
-import com.exemple.entities.Candidature;
-import com.exemple.entities.Deplom;
-import com.exemple.entities.Offer;
-import com.exemple.entities.Societe;
+import com.exemple.dao.*;
+import com.exemple.entities.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -19,6 +13,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 public class Controller1 {
     @Autowired
@@ -29,6 +25,9 @@ public class Controller1 {
     private SocieteRepository societeRepository;
     @Autowired
     private CandidatureRepository candidatureRepository;
+    @Autowired
+    private AdminRepository adminRepository;
+
     @GetMapping("/test")
     public String getAdmin() {
         return "Controller1html";
@@ -55,9 +54,31 @@ public class Controller1 {
         return "/accessible/Contact";
     }
     @GetMapping("/loginadmin")
-    public String loginadmin(){
+    public String loginadmin(Model model){
+        model.addAttribute("admin", new Admin());
+        return "Admin/Adminlog";
+    }
+    @GetMapping("/logadmin")
+    public String logadmin(Admin admin, Model model){
+        try {
+            Admin ad;
+            List<Admin> addmin = adminRepository.findAll();
+            if(addmin != null){
+               ad = addmin.get(0);
+               if(ad.getPassword().equals(admin.getPassword())){
+                   if (ad.getEmail().equals(admin.getEmail())){
+                       return "Admin/naveAdmin";
+                   }
+               }
 
-        return "Admin/Offeradmin";
+            }else{
+                return "Admin/Adminlog";
+            }
+
+        }catch(Exception e){
+            return "Admin/Adminlog";
+        }
+        return "Admin/Adminlog";
     }
     @GetMapping("/logincondida")
     public String logincondida(){
@@ -161,7 +182,7 @@ public class Controller1 {
                         @RequestParam(name = "size", defaultValue = "5") int size,
                         @RequestParam(name = "keyword", defaultValue = "") String kw) {
         Pageable pageable = PageRequest.of(page, size);
-        Page<Offer> offersPage = offerRepository.findByLabelDiplomaContains(kw, pageable);
+        Page<Offer> offersPage = offerRepository.findAll( pageable);
 
         model.addAttribute("listOffers", offersPage.getContent());
         model.addAttribute("pages", new int[offersPage.getTotalPages()]);
@@ -175,20 +196,21 @@ public class Controller1 {
         offerRepository.delete(offer);
         return "Admin/Offeradmin";
     }
+
     @GetMapping("/societe")
-    public String societeliste(Model model,
-                             @RequestParam(name = "page", defaultValue = "0") int page,
-                             @RequestParam(name = "size", defaultValue = "5") int size,
-                             @RequestParam(name = "keyword", defaultValue = "") String kw) {
+    public String societe2liste(Model model,
+                               @RequestParam(name = "page", defaultValue = "0") int page,
+                               @RequestParam(name = "size", defaultValue = "50") int size
+                               ) {
         Pageable pageable = PageRequest.of(page, size);
-        Page<Societe> societes = societeRepository.findByNomSContains(kw,pageable);
+        Page<Societe> societes = societeRepository.findAll(pageable);
 
         model.addAttribute("listsociete", societes.getContent());
         model.addAttribute("pages", new int[societes.getTotalPages()]);
         model.addAttribute("currentPage", page);
-        model.addAttribute("keyword", kw);
         return "Admin/societe";
     }
+
    /* @GetMapping("/admin/addeplom")
     public String editdeplom(@RequestParam String name ,@RequestParam String branche,@RequestParam String niveau){
         Deplom deplom = new Deplom();

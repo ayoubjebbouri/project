@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.exemple.entities.Societe;
 
 public interface SocieteRepository extends JpaRepository<Societe, Long> {
-	Page<Societe> findByNomSContains(String kw, Pageable pageable);
-
+	Page<Societe> findByDescriptionContains(String kw, Pageable pageable);
+	Page<Societe> findByIDSocieteContains(String kw, Pageable pageable);
+	Page<Societe> findByCityContains(String kw, Pageable pageable);
 }

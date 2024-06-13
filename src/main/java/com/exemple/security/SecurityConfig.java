@@ -34,6 +34,7 @@ public class SecurityConfig {
         httpSecurity.authorizeHttpRequests().requestMatchers("/webjars/**").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/liste").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/deploma").permitAll();
+        httpSecurity.authorizeHttpRequests().requestMatchers("/logadmin").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/dmin/deletedeplom").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/admin/addeplom").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/admin/addeplom").permitAll();
