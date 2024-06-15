@@ -20,12 +20,7 @@ public class DeplomcondidadatController {
 	@Autowired
 	 private DeplomcondidatRepository deplomcondidatrepository;
 	
-	@GetMapping
-    public String getAllDeplomcondidats(Model model) {
-		List<Deplomcondidat> Deplomcondidat =deplomcondidatrepository.findAll();
-        model.addAttribute("Deplomcondidat", Deplomcondidat);
-        return "deplomcondidat/list";
-    }
+
 	@GetMapping("/new")
     public String showNewDeplomcondidatForm(Model model) {
         model.addAttribute("Deplomcondidat", new Deplomcondidat());

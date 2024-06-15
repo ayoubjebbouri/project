@@ -5,12 +5,10 @@ package com.exemple.entities;
 import java.sql.Blob;
 import java.util.Date;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 @Entity
+@Table(name = "Offer")
 public class Offer {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long IDOffer;
@@ -20,39 +18,39 @@ public class Offer {
     String GradeOffer;
 	@NotEmpty 
     Date DatePos;
-	@NotEmpty 
+	@NotEmpty
     Date DateFin;
     int NumberPost;
     @NotEmpty 
     int NUM;
-    @NotEmpty 
+    @NotEmpty
     String TypeDiploma;
-    @NotEmpty 
+    @NotEmpty
     String LabelDiploma;
-    @NotEmpty 
+    @NotEmpty
     String City;
-    @NotEmpty 
+    @NotEmpty
     String Country;
     @NotEmpty 
     int IDSociete;
 
 
-    public Offer(Long iDOffer, String title, String gradeOffer, Date datePos, Date dateFin, int numberPost,
-                 int nUM, String typeDiploma, String labelDiploma, String city, String country,
-                 int iDSociete) {
+    public Offer(Long IDOffer, String Title, String GradeOffer, Date DatePos, Date DateFin, int NumberPost,
+                 int NUM, String TypeDiploma, String LabelDiploma, String City, String Country,
+                 int IDSociete) {
         super();
-        IDOffer = iDOffer;
-        this.Title = title;
-        GradeOffer = gradeOffer;
-        DatePos = datePos;
-        DateFin = dateFin;
-        NumberPost = numberPost;
-        NUM = nUM;
-        TypeDiploma = typeDiploma;
-        LabelDiploma = labelDiploma;
-        City = city;
-        Country = country;
-        IDSociete = iDSociete;
+        this.IDOffer = IDOffer;
+        this.Title = Title;
+        this.GradeOffer = GradeOffer;
+        this.DatePos = DatePos;
+        this.DateFin = DateFin;
+        this.NumberPost = NumberPost;
+        this.NUM = NUM;
+        this.TypeDiploma = TypeDiploma;
+        this.LabelDiploma = LabelDiploma;
+        this.City = City;
+        this.Country = Country;
+        this.IDSociete = IDSociete;
     }
     public Offer() {
         super();
@@ -64,8 +62,8 @@ public class Offer {
     }
 
 
-    public void setIDOffer(Long iDOffer) {
-        IDOffer = iDOffer;
+    public void setIDOffer(Long IDOffer) {
+        this.IDOffer = IDOffer;
     }
 
 
@@ -74,8 +72,8 @@ public class Offer {
     }
 
 
-    public void setTitle(String title) {
-        this.Title = title;
+    public void setTitle(String Title) {
+        this.Title = Title;
     }
 
 
@@ -84,8 +82,8 @@ public class Offer {
     }
 
 
-    public void setGradeOffer(String gradeOffer) {
-        GradeOffer = gradeOffer;
+    public void setGradeOffer(String GradeOffer) {
+        this.GradeOffer = GradeOffer;
     }
 
 
@@ -94,8 +92,8 @@ public class Offer {
     }
 
 
-    public void setDatePos(Date datePos) {
-        DatePos = datePos;
+    public void setDatePos(Date DatePos) {
+        this.DatePos = DatePos;
     }
 
 
@@ -104,8 +102,8 @@ public class Offer {
     }
 
 
-    public void setDateFin(Date dateFin) {
-        DateFin = dateFin;
+    public void setDateFin(Date DateFin) {
+        this.DateFin = DateFin;
     }
 
 
@@ -114,8 +112,8 @@ public class Offer {
     }
 
 
-    public void setNumberPost(int numberPost) {
-        NumberPost = numberPost;
+    public void setNumberPost(int NumberPost) {
+        this.NumberPost = NumberPost;
     }
 
 
@@ -126,8 +124,8 @@ public class Offer {
     }
 
 
-    public void setNUM(int nUM) {
-        NUM = nUM;
+    public void setNUM(int NUM){
+        this.NUM = NUM;
     }
 
 
@@ -136,8 +134,8 @@ public class Offer {
     }
 
 
-    public void setTypeDiploma(String typeDiploma) {
-        TypeDiploma = typeDiploma;
+    public void setTypeDiploma(String TypeDiploma) {
+        this.TypeDiploma = TypeDiploma;
     }
 
 
@@ -146,8 +144,8 @@ public class Offer {
     }
 
 
-    public void setLabelDiploma(String labelDiploma) {
-        LabelDiploma = labelDiploma;
+    public void setLabelDiploma(String LabelDiploma) {
+        this.LabelDiploma = LabelDiploma;
     }
 
 
@@ -156,8 +154,8 @@ public class Offer {
     }
 
 
-    public void setCity(String city) {
-        City = city;
+    public void setCity(String City) {
+        this.City = City;
     }
 
 
@@ -166,8 +164,8 @@ public class Offer {
     }
 
 
-    public void setCountry(String country) {
-        Country = country;
+    public void setCountry(String Country) {
+        this.Country = Country;
     }
 
 
@@ -176,7 +174,7 @@ public class Offer {
     }
 
 
-    public void setIDSociete(int iDSociete) {
-        IDSociete = iDSociete;
+    public void setIDSociete(int IDSociete) {
+        this.IDSociete = IDSociete;
     }
 }

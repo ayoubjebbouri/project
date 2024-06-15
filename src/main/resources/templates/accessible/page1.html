@@ -59,13 +59,13 @@
         <div class=" collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link mx-2" aria-current="page" href="#">Home</a>
+                    <a class="nav-link mx-2" aria-current="page" href="/index">Home</a>
                 </li>
                 <li class="nav-item" >
-                    <a class="nav-link mx-2" th:href="@{/format}"> About</a>
+                    <a class="nav-link mx-2" th:href="@{/About}"> About</a>
                 </li>
                 <li class="nav-item" >
-                    <a class="nav-link mx-2" th:href="@{/accessible/contact}">Contact</a>
+                    <a class="nav-link mx-2" th:href="@{/contact}">Contact</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto d-none d-lg-inline-flex">
@@ -73,10 +73,19 @@
                     <a class="nav-link mx-2" th:href="@{/loginadmin}">Login as Admin</a>
                 </li>
                 <li class="nav-item" >
-                    <a class="nav-link mx-2" th:href="@{/deploma}">Login as Candidate</a>
+                    <a class="nav-link mx-2" th:href="@{/Admin/Deploms}">admin Dashboard</a>
                 </li>
                 <li class="nav-item" >
-                    <a class="nav-link mx-2" th:href="@{/loginsociete}">Login as Company</a>
+                    <a class="nav-link mx-2" th:href="@{/logincondidature}">Login as Candidate</a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link mx-2" th:href="@{/}">Candidate Dashboard</a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link mx-2" th:href="@{/loginsociete}">Login as Societe</a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link mx-2" th:href="@{/}">Company Dashboard</a>
                 </li>
             </ul>
         </div>

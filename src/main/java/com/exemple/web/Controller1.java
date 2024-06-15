@@ -28,68 +28,12 @@ public class Controller1 {
     @Autowired
     private AdminRepository adminRepository;
 
-    @GetMapping("/test")
-    public String getAdmin() {
-        return "Controller1html";
-    }
 
-    @GetMapping("/index")
-    public String getsdmin() {
-        return "/accessible/page1";
-    }
 
-    @GetMapping("/accessible/about1")
-    public String getabout(){
 
-        return "accessible/about";
-    }
-    @GetMapping("/format")
-    public String getformat(){
-        return "accessible/about";
-    }
 
-    @GetMapping("/accessible/contact")
-    public String getcontact(){
 
-        return "/accessible/Contact";
-    }
-    @GetMapping("/loginadmin")
-    public String loginadmin(Model model){
-        model.addAttribute("admin", new Admin());
-        return "Admin/Adminlog";
-    }
-    @GetMapping("/logadmin")
-    public String logadmin(Admin admin, Model model){
-        try {
-            Admin ad;
-            List<Admin> addmin = adminRepository.findAll();
-            if(addmin != null){
-               ad = addmin.get(0);
-               if(ad.getPassword().equals(admin.getPassword())){
-                   if (ad.getEmail().equals(admin.getEmail())){
-                       return "Admin/naveAdmin";
-                   }
-               }
 
-            }else{
-                return "Admin/Adminlog";
-            }
-
-        }catch(Exception e){
-            return "Admin/Adminlog";
-        }
-        return "Admin/Adminlog";
-    }
-    @GetMapping("/logincondida")
-    public String logincondida(){
-
-        return "accessible/logincondida";
-    }
-    @GetMapping("/signupcon")
-    public String signupcon(Model model){
-        model.addAttribute("candidature", new Candidature());
-        return "accessible/signupCondidature";
-    }
     @PostMapping("/saveCandidature")
     public String saveCandidature(Candidature candidature) throws Exception  {
         System.out.println(candidature);
@@ -102,42 +46,18 @@ public class Controller1 {
         candidatureRepository.save(candidature);
         return "accessible/logincondida";
     }
-   @GetMapping("/savesociete")
-   public String savesociete(Societe societe){
-        societeRepository.save(societe);
-       return "accessible/logsociete";
-   }
 
-    @GetMapping("/signupSociete")
-    public String signupSociete(Model model){
-        model.addAttribute("societe", new Societe());
-        return "accessible/SignupSociete";
-    }
 
-    @GetMapping("/loginsociete")
-    public String loginsociete(){
 
-        return "accessible/logsociete";
-    }
+
+
 
     @GetMapping("/listedeploms")
     public String getdeplom(){
         return "Admin/societe";
     }
-    @GetMapping("/deploma")
-    public String liste(Model model,
-                        @RequestParam(name = "page", defaultValue = "0") int page,
-                        @RequestParam(name = "size", defaultValue = "5") int size,
-                        @RequestParam(name = "keyword", defaultValue = "") String kw) {
-        Pageable pageable = PageRequest.of(page, size);
-        Page<Deplom> deplomPage = deplomService.findByniveauContains(kw, pageable);
 
-        model.addAttribute("listDeplom", deplomPage.getContent());
-        model.addAttribute("pages", new int[deplomPage.getTotalPages()]);
-        model.addAttribute("currentPage", page);
-        model.addAttribute("keyword", kw);
-        return "Admin/Deplom";
-    }
+
     @GetMapping("/dmin/deletedeplom")
     public String deletedeplom(@RequestParam(name = "id") Long id, String keyword , int page){
         deplomService.deleteById(id);
@@ -161,11 +81,7 @@ public class Controller1 {
         model.addAttribute("deplom", new Deplom());
         return "/admin/editdeolom";
     }
-    @GetMapping("/pageaddeploms")
-    public String pageaddeploms(Model model){
-        model.addAttribute("deplom", new Deplom());
-        return "Admin/Addeplom";
-    }
+
     @GetMapping("/admin/addeplom")
     public String addeplom(Deplom deplom){
         System.out.println("Id :" +deplom.getId());
@@ -176,20 +92,7 @@ public class Controller1 {
         deplomService.save(deplom);
         return "Admin/Addeplom";
     }
-    @GetMapping("/offers")
-    public String offerliste(Model model,
-                        @RequestParam(name = "page", defaultValue = "0") int page,
-                        @RequestParam(name = "size", defaultValue = "5") int size,
-                        @RequestParam(name = "keyword", defaultValue = "") String kw) {
-        Pageable pageable = PageRequest.of(page, size);
-        Page<Offer> offersPage = offerRepository.findAll( pageable);
 
-        model.addAttribute("listOffers", offersPage.getContent());
-        model.addAttribute("pages", new int[offersPage.getTotalPages()]);
-        model.addAttribute("currentPage", page);
-        model.addAttribute("keyword", kw);
-        return "Admin/Offeradmin";
-    }
     @GetMapping("/dmin/deleteoffer")
     public String deleteoffer(@RequestParam(name = "id") Long id ,Model model){
         Offer offer = offerRepository.findById(id).get();
@@ -197,33 +100,8 @@ public class Controller1 {
         return "Admin/Offeradmin";
     }
 
-    @GetMapping("/societe")
-    public String societe2liste(Model model,
-                               @RequestParam(name = "page", defaultValue = "0") int page,
-                               @RequestParam(name = "size", defaultValue = "50") int size
-                               ) {
-        Pageable pageable = PageRequest.of(page, size);
-        Page<Societe> societes = societeRepository.findAll(pageable);
 
-        model.addAttribute("listsociete", societes.getContent());
-        model.addAttribute("pages", new int[societes.getTotalPages()]);
-        model.addAttribute("currentPage", page);
-        return "Admin/societe";
-    }
-    @GetMapping("/condida")
-    public String conliste(Model model,
-                        @RequestParam(name = "page", defaultValue = "0") int page,
-                        @RequestParam(name = "size", defaultValue = "5") int size,
-                        @RequestParam(name = "keyword", defaultValue = "") String kw) {
-        Pageable pageable = PageRequest.of(page, size);
-        Page<Candidature> candidatures = candidatureRepository.findByPropertyNameContains(kw, pageable);
 
-        model.addAttribute("conliste", candidatures.getContent());
-        model.addAttribute("pages", new int[candidatures.getTotalPages()]);
-        model.addAttribute("currentPage", page);
-        model.addAttribute("keyword", kw);
-        return "Admin/listecondida";
-    }
 
    /* @GetMapping("/admin/addeplom")
     public String editdeplom(@RequestParam String name ,@RequestParam String branche,@RequestParam String niveau){

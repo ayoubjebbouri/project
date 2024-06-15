@@ -18,12 +18,7 @@ public class DeplomController {
 	@Autowired
     private DeplomRepository deplomService;
 
-    @GetMapping
-    public String getAllDeploms(Model model) {
-        List<Deplom> deploms = deplomService.findAll();
-        model.addAttribute("deploms", deploms);
-        return "deplom/list";
-    }
+
 
     @GetMapping("/savedeplom")
     public String showNewDeplomForm(Model model) {

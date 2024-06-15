@@ -17,12 +17,7 @@ public class CandidatureController {
 	 @Autowired
 	 private CandidatureRepository candidatureRepository;
 
-	    @GetMapping()
-	    public String getAllCandidatures(Model model) {
-	        List<Candidature> candidatures = candidatureRepository.findAll();
-	        model.addAttribute("candidatures", candidatures);
-	        return "candidature/list";
-	    }
+
 
 	    @GetMapping("/{id}")
 	    public String getCandidatureById(@PathVariable("id") Long idC, Model model) {

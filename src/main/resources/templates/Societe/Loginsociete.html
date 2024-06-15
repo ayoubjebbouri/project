@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" >
 <head>
-    <title>Login Condidature</title>
+    <title>Login Societe</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -33,9 +33,9 @@
                 <img src="img/img-01.png" alt="IMG">
             </div>
 
-            <form class="login100-form validate-form" method="post" th:action="@{/loginsociete}">
+            <form class="login100-form validate-form" method="get" th:action="@{/loginsociete}">
 					<span class="login100-form-title">
-						Member Login
+						Societe Login
 					</span>
 
                 <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">

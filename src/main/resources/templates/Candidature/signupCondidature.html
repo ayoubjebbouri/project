@@ -33,14 +33,14 @@
 			<div class="card mt-5">
 				<div class="card-body">
 					<h3 class="card-title text-center">Sign Up</h3>
-					<form method="GET" th:object="${candidature}" th:action="@{/saveuser}">
+					<form method="GET" th:object="${candidature}" th:action="@{/savecondidature}">
 						<div class="form-group">
 							<label for="FirstName">First Name</label>
-							<input type="text" class="form-control" id="FirstName" name="FirstName" required placeholder="Enter first name" th:field="*{firstName}">
+							<input type="text" class="form-control" id="FirstName" name="FirstName" required placeholder="Enter first name" th:field="*{FirstName}">
 						</div>
 						<div class="form-group">
 							<label for="LastName">Last Name</label>
-							<input type="text" class="form-control" id="LastName" name="LastName" required placeholder="Enter last name" th:field="*{lastName}">
+							<input type="text" class="form-control" id="LastName" name="LastName" required placeholder="Enter last name" th:field="*{LastName}">
 
 						</div>
 						<div class="form-group">

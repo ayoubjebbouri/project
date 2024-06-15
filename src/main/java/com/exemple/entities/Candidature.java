@@ -42,20 +42,20 @@ public class Candidature {
 		public Long getIDC() {
 			return IDC;
 		}
-		public void setIDC(Long iDC) {
-			IDC = iDC;
+		public void setIDC(Long IDC) {
+			this.IDC = IDC;
 		}
 		public String getLastName() {
 			return LastName;
 		}
-		public void setLastName(String lastName) {
-			LastName = lastName;
+		public void setLastName(String LastName) {
+			this.LastName = LastName;
 		}
 		public String getFirstName() {
 			return FirstName;
 		}
-		public void setFirstName(String firstName) {
-			FirstName = firstName;
+		public void setFirstName(String FirstName) {
+			this.FirstName = FirstName;
 		}
 		public String getSexe() {
 			return sexe;
@@ -66,32 +66,32 @@ public class Candidature {
 		public LocalDate getDateN() {
 			return DateN;
 		}
-		public void setDateN(LocalDate dateN) {
-			DateN = dateN;
+		public void setDateN(LocalDate DateN) {
+			this.DateN = DateN;
 		}
 		public String getNumCNI() {
 			return NumCNI;
 		}
-		public void setNumCNI(String numCNI) {
-			NumCNI = numCNI;
+		public void setNumCNI(String NumCNI) {
+			this.NumCNI = NumCNI;
 		}
 		public String getNUM() {
 			return NUM;
 		}
-		public void setNUM(String nUM) {
-			NUM = nUM;
+		public void setNUM(String NUM) {
+			this.NUM = NUM;
 		}
 		public String getEmail() {
 			return Email;
 		}
-		public void setEmail(String email) {
-			Email = email;
+		public void setEmail(String Email) {
+			this.Email = Email;
 		}
 		public String getPassword() {
 			return Password;
 		}
-		public void setPassword(String password) {
-			Password = password;
+		public void setPassword(String Password) {
+			this.Password = Password;
 		}
 		public String getNiveau() {
 			return niveau;
@@ -102,32 +102,32 @@ public class Candidature {
 		public String getCity() {
 			return City;
 		}
-		public void setCity(String city) {
-			City = city;
+		public void setCity(String City) {
+			this.City = City;
 		}
 		public String getCountry() {
 			return Country;
 		}
-		public void setCountry(String country) {
-			Country = country;
+		public void setCountry(String Country) {
+			this.Country = Country;
 		}
-		public Candidature(Long iDC, @NotEmpty String lastName, @NotEmpty String firstName, @NotEmpty String sexe,
-				@NotEmpty LocalDate dateN, @NotEmpty @Size(min = 8, max = 12) String numCNI, @NotEmpty String nUM,
-				@NotEmpty String email, @NotEmpty @Size(min = 8, max = 15) String password, @NotEmpty String niveau,
-				 String city, String country,String PropertyName) {
+		public Candidature(Long IDC, @NotEmpty String LastName, @NotEmpty String FirstName, @NotEmpty String sexe,
+				@NotEmpty LocalDate DateN, @NotEmpty @Size(min = 8, max = 12) String NumCNI, @NotEmpty String NUM,
+				@NotEmpty String Email, @NotEmpty @Size(min = 8, max = 15) String Password, @NotEmpty String niveau,
+				 String City, String Country,String PropertyName) {
 			super();
-			IDC = iDC;
-			LastName = lastName;
-			FirstName = firstName;
+			this.IDC = IDC;
+			this.LastName = LastName;
+			this.FirstName = FirstName;
 			this.sexe = sexe;
-			DateN = dateN;
-			NumCNI = numCNI;
-			NUM = nUM;
-			Email = email;
-			Password = password;
+			this.DateN = DateN;
+			this.NumCNI = NumCNI;
+			this.NUM = NUM;
+			this.Email = Email;
+			this.Password = Password;
 			this.niveau = niveau;
-			City = city;
-			Country = country;
+			this.City = City;
+			this.Country = Country;
 			this.PropertyName = PropertyName;
 		}
 		public Candidature() {
