@@ -24,8 +24,9 @@ public class Candidature {
 	    String NumCNI;
 	    @NotEmpty 
 	    String NUM;
+		private  String email1;
 	    @NotEmpty 
-	    String Email;
+	    private String Email;
 		private String PropertyName;
 	    @NotEmpty @Size(min = 8, max = 15)
 	    String Password;
@@ -108,6 +109,8 @@ public class Candidature {
 		public String getCountry() {
 			return Country;
 		}
+		public void setemail1(String email) { this.email1 = email; }
+		public String getemail1() { return email1; }
 		public void setCountry(String Country) {
 			this.Country = Country;
 		}
@@ -129,6 +132,7 @@ public class Candidature {
 			this.City = City;
 			this.Country = Country;
 			this.PropertyName = PropertyName;
+			this.email1 = Email;
 		}
 		public Candidature() {
 			super();

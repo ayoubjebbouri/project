@@ -6,8 +6,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.exemple.entities.Societe;
 
+import java.util.List;
+
 public interface SocieteRepository extends JpaRepository<Societe, Long> {
 	Page<Societe> findByDescriptionContains(String kw, Pageable pageable);
 	Page<Societe> findByIDSocieteContains(String kw, Pageable pageable);
 	Page<Societe> findByCityContains(String kw, Pageable pageable);
+	List<Societe> findSocieteByemail1(String email);
 }

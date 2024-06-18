@@ -40,6 +40,7 @@ public class Societe {
 
 	@NotEmpty
 	private String City;
+	private  String email1;
 
 	@NotEmpty
 	private String Country;
@@ -58,6 +59,7 @@ public class Societe {
 		this.Description = description;
 		City = city;
 		Country = country;
+		email1 = email;
 	}
 
 	public Societe() {
@@ -66,7 +68,8 @@ public class Societe {
 
 	// Getters and Setters
 
-
+		public void setemail1(String email) { this.email1 = email; }
+		public String getemail1() { return email1; }
 	    public Long getIDSociete() {
 	        return IDSociete;
 	    }

@@ -64,15 +64,17 @@ public class Logins {
     //  login logic
     @GetMapping("/logcondidature")
     public String logcondidature(Candidature candidature){
+
+        List<Candidature> ls =  candidatureRepository.findCandidatureByemail1Equals(candidature.getEmail());
         try {
-            Candidature Ca;
-            List<Candidature> candidatures = candidatureRepository.findAll();
-            Ca = candidatures.getFirst();
-            if(Ca.getPassword().equals(candidature.getPassword())){
-                if (Ca.getEmail().equals(candidature.getEmail())){
-                    return "Candidature/DashboardCandidature";
+            for (int i = 0; i < ls.size(); i++) {
+                if(ls.get(i).getEmail().equals(candidature.getEmail())){
+                    if(ls.get(i).getPassword().equals(candidature.getPassword())){
+                        return "Candidature/DashboardCandidature";
+                    }
                 }
             }
+
         }catch(Exception e){
             return "Candidature/Logincondidature";
         }
@@ -94,13 +96,15 @@ public class Logins {
     public String logsociete(Societe societe,Model model){
         try {
             Societe Sc;
-            List<Societe> Societe1 = societeRepository.findAll();
-            Sc = Societe1.getFirst();
-            if(Sc.getPassword().equals(societe.getPassword())){
-                if (Sc.getEmail().equals(societe.getEmail())){
-                    return "Admin/DashboardSociete";
+            List<Societe> Societe1 = societeRepository.findSocieteByemail1(societe.getemail1());
+            for (int i = 0; i < Societe1.size(); i++) {
+                if(Societe1.get(i).getEmail().equals(societe.getemail1())){
+                    if(Societe1.get(i).getPassword().equals(societe.getPassword())){
+                        return "Admin/DashboardSociete";
+                    }
                 }
             }
+
         }catch(Exception e){
             return "Societe/Loginsociete";
         }

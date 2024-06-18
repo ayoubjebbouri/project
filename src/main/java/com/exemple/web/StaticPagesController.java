@@ -19,7 +19,7 @@ public class StaticPagesController {
     // serve static page
     @GetMapping("/index")
     public String getsdmin() {
-        return "/accessible/index";
+        return "/accessible/page1";
     }
 
     // serve static page
