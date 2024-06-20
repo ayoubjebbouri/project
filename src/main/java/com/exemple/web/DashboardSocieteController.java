@@ -9,7 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+@RequestMapping("/Societe")
 @Controller
 public class DashboardSocieteController {
     @Autowired
@@ -27,7 +29,7 @@ public class DashboardSocieteController {
     @GetMapping("/hommeaddoffer")
     public String pageaddeploms(Model model){
         model.addAttribute("offer", new Offer());
-        return "Admin/Addeplom";
+        return "Societe/AddDeplom";
     }
     // ADD OFFER
     @GetMapping("/Addoffer")

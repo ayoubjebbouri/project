@@ -1,5 +1,4 @@
 package com.exemple.web;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,13 +10,13 @@ import com.exemple.entities.Candidature;
 
 
 
-@RequestMapping("/candidature")
+//@RequestMapping("/candidature")
 @Controller
-public class CandidatureController {
+public class ___CandidatureController {
 	 @Autowired
 	 private CandidatureRepository candidatureRepository;
 
-
+/*
 
 	    @GetMapping("/{id}")
 	    public String getCandidatureById(@PathVariable("id") Long idC, Model model) {
@@ -31,5 +30,5 @@ public class CandidatureController {
 			System.out.println(candidature);
 	    	candidatureRepository.save(candidature);
 	        return "redirect:/logincondida";
-	    }
+	    }*/
 }

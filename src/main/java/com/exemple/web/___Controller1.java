@@ -1,22 +1,10 @@
 package com.exemple.web;
 import com.exemple.dao.*;
-import com.exemple.entities.*;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.List;
 
 @Controller
-public class Controller1 {
+public class ___Controller1 {
     @Autowired
     public OfferRepository offerRepository;
     @Autowired
@@ -33,7 +21,7 @@ public class Controller1 {
 
 
 
-
+    /*
     @PostMapping("/saveCandidature")
     public String saveCandidature(Candidature candidature) throws Exception  {
         System.out.println(candidature);

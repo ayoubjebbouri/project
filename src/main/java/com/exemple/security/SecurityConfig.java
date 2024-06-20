@@ -89,7 +89,6 @@ public class SecurityConfig {
         httpSecurity.exceptionHandling().accessDeniedPage("/notAuthorized");
         httpSecurity.authorizeHttpRequests().anyRequest().authenticated();
         */
-        httpSecurity.authorizeHttpRequests().requestMatchers("/templates/Condidature/ss").permitAll();
         httpSecurity.authorizeHttpRequests().requestMatchers("/resources/**","/templates/**").permitAll();
         httpSecurity.authorizeHttpRequests(auth -> auth.anyRequest().permitAll());
         return httpSecurity.build();

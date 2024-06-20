@@ -1,7 +1,5 @@
 package com.exemple.web;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -14,12 +12,12 @@ import com.exemple.dao.DeplomRepository;
 
 @RequestMapping("/deplom")
 @Controller
-public class DeplomController {
+public class ___DeplomController {
 	@Autowired
     private DeplomRepository deplomService;
 
 
-
+/*
     @GetMapping("/savedeplom")
     public String showNewDeplomForm(Model model) {
         model.addAttribute("deplom", new Deplom());
@@ -46,5 +44,5 @@ public class DeplomController {
         model.addAttribute("currentPage",page);
         model.addAttribute("keyword",kw);
         return "Admin/Deplom";
-    }
+    }*/
 }

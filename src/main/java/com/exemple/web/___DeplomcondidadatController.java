@@ -1,7 +1,5 @@
 package com.exemple.web;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,11 +14,11 @@ import com.exemple.entities.Deplomcondidat;
 
 
 @Controller
-public class DeplomcondidadatController {
+public class ___DeplomcondidadatController {
 	@Autowired
 	 private DeplomcondidatRepository deplomcondidatrepository;
 	
-
+/*
 	@GetMapping("/new")
     public String showNewDeplomcondidatForm(Model model) {
         model.addAttribute("Deplomcondidat", new Deplomcondidat());
@@ -33,5 +31,5 @@ public class DeplomcondidadatController {
         }
         deplomcondidatrepository.save(deplomcondidat);
         return "redirect:/deplomcondidat";
-    }
+    }*/
 }
