@@ -27,4 +27,9 @@ public class StaticPagesController {
     public String getindex1() {
         return "accessible/page1";
     }
+
+    @GetMapping("/nave")
+    public String getnave() {
+        return "Candidature/navebar";
+    }
 }

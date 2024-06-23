@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+
+>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Modernize Free</title>
+    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
+    <link href="../../static/css/assets/css/styles.min.css" th:href="@{/css/assets/css/styles.min.css}" rel="stylesheet"  >
+</head>
+
+<body>
+<!--  Body Wrapper -->
+<div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+     data-sidebar-position="fixed" data-header-position="fixed">
+    <!-- Sidebar Start -->
+    <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div>
+            <div class="brand-logo d-flex align-items-center justify-content-between">
+                <a href="./index.html" class="text-nowrap logo-img">
+                    <img style="height: 80px;width:80px;top: -4px;position:relative" src="img/logo.png" alt="new logo" />
+                </a>
+                <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+                    <i class="ti ti-x fs-8"></i>
+                </div>
+            </div>
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+                <ul id="sidebarnav">
+                    <li class="nav-small-cap">
+                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                        <span class="hide-menu">Home</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="./index.html" aria-expanded="false">
+                <span>
+                  <i class="ti ti-layout-dashboard"></i>
+                </span>
+                            <span class="hide-menu">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
+                <span>
+                  <img data-v-a1903a08="" class="app-preview__image-origin" srcset="https://img.icons8.com/?size=256w&amp;id=20749&amp;format=png 1x, https://img.icons8.com/?size=512w&amp;id=20749&amp;format=png 2x" width="24" height="24" alt="User icon" style="">
+                </span>
+                            <span class="hide-menu">Profile</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
+                <span>
+                        <img data-v-a1903a08="" class="app-preview__image-origin" srcset="https://img.icons8.com/?size=256w&amp;id=20497&amp;format=png 1x, https://img.icons8.com/?size=512w&amp;id=20497&amp;format=png 2x" width="24" height="24" alt="Job icon" style="">                </span>
+                            <span class="hide-menu">Offers</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
+                <span>
+                        <img data-v-a1903a08="" class="app-preview__image-origin" srcset="https://img.icons8.com/?size=256w&amp;id=20497&amp;format=png 1x, https://img.icons8.com/?size=512w&amp;id=20497&amp;format=png 2x" width="24" height="24" alt="Job icon" style="">                </span>
+
+                </span>
+                            <span class="hide-menu">My Postulation</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
+                <span>
+                    <img data-v-a1903a08="" class="app-preview__image-origin" srcset="https://img.icons8.com/?size=256w&amp;id=wMSWNaKgUEZL&amp;format=png 1x, https://img.icons8.com/?size=512w&amp;id=wMSWNaKgUEZL&amp;format=png 2x" width="24" height="24" alt="Job icon" style="">                </span>
+                            <span class="hide-menu">Societe</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
+                <span>
+                  <img data-v-a1903a08="" class="app-preview__image-origin" srcset="https://img.icons8.com/?size=256w&amp;id=beTHmhlNT1WP&amp;format=png 1x, https://img.icons8.com/?size=512w&amp;id=beTHmhlNT1WP&amp;format=png 2x" width="24" height="24" alt="Job icon" style="">
+                </span>
+                            <span class="hide-menu">Save Offers</span>
+                        </a>
+                    </li>
+                    <li class="nav-small-cap">
+                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                        <span class="hide-menu">AUTH</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+                <span>
+                  <i class="ti ti-login"></i>
+                </span>
+                            <span class="hide-menu">Log Out</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+            <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+    </aside>
+    <!--  Sidebar End -->
+    <!--  Main wrapper -->
+
+</div>
+<div layout:fragment="content">
+
+</div>
+<script src="../../static/css/assets/libs/jquery/dist/jquery.min.js" th:src="@{/css/assets/libs/jquery/dist/jquery.min.js}"></script>
+<script src="../../static/css/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js" th:src="@{/css/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js}"></script>
+<script src="../../static/css/assets/js/sidebarmenu.js" th:src="@{/css/assets/js/sidebarmenu.js}"></script>
+<script src="../../static/css/assets/js/app.min.js" th:src="@{/css/assets/js/app.min.js}"></script>
+<script src="../../static/css/assets/libs/apexcharts/dist/apexcharts.min.js" th:src="@{/css/assets/libs/apexcharts/dist/apexcharts.min.js}"></script>
+<script src="../../static/css/assets/libs/simplebar/dist/simplebar.js" th:src="@{/css/assets/libs/simplebar/dist/simplebar.js}"></script>
+<script src="../../static/css/assets/js/dashboard.js" th:src="@{/css/assets/libs/js/dashboard.js}"></script>
+
+</body>
+
+</html>
